@@ -116,6 +116,7 @@ const Column = ({
       className={`flex-1 min-w-80 h-[calc(100vh-9.1rem)] xl:max-h-[50vh] ${getColumnColor()} rounded-lg border ${getBorderColor()} ${
         isOver ? "border-blue-400 bg-blue-50 dark:bg-blue-900/30" : ""
       } transition-all duration-200 flex flex-col`}
+      style={{ touchAction: "none" }}
     >
       <div className="p-4 rounded-t-lg border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
         <div className="flex justify-between items-center">
@@ -133,20 +134,15 @@ const Column = ({
         </div>
       </div>
 
-      <div
-        ref={setNodeRef}
-        className={`flex-1 p-4 ${
-          tasks.length === 0
-            ? "flex items-center justify-center"
-            : "overflow-y-auto"
-        }`}
-      >
+      <div ref={setNodeRef} className="flex-1 p-4 overflow-y-auto">
         {tasks.length === 0 ? (
-          <div className="text-center text-gray-500 dark:text-gray-400">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
-              <Plus size={24} className="text-gray-400" />
+          <div className="flex items-center justify-center h-full text-center text-gray-500 dark:text-gray-400">
+            <div>
+              <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                <Plus size={24} className="text-gray-400" />
+              </div>
+              <p>No tasks yet</p>
             </div>
-            <p>No tasks yet</p>
           </div>
         ) : (
           <SortableContext

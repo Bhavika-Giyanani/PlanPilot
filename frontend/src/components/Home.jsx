@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {
   DndContext,
   DragOverlay,
-  PointerSensor,
+  MouseSensor,
   TouchSensor,
   KeyboardSensor,
   useSensor,
@@ -27,17 +27,17 @@ const Home = ({ isDarkMode, toggleDarkMode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [error, setError] = useState("");
 
-  //^ Drag and Drop Sensors
+  //^ Drag and Drop Sensors - Updated for mobile compatibility
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: {
         distance: 3,
       },
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 150,
-        tolerance: 8,
+        delay: 250,
+        tolerance: 5,
       },
     }),
     useSensor(KeyboardSensor, {
@@ -429,14 +429,18 @@ const Home = ({ isDarkMode, toggleDarkMode }) => {
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           {/* Kanban Board */}
-          <div className="flex flex-col xl:flex-row gap-6 overflow-x-auto pb-4 justify-center items-center">
-            <div className="flex gap-6 min-w-full xl:min-w-0">
+          <div className="w-full overflow-x-auto">
+            <div
+              className="flex gap-6 xl:justify-center min-w-max xl:min-w-0"
+              style={{ touchAction: "none" }}
+            >
               {Object.entries(tasksByStatus).map(([status, tasks]) => (
                 <div
                   key={status}
-                  className={`flex-1 min-w-80 ${getColumnColor(
+                  className={`w-80 flex-shrink-0 ${getColumnColor(
                     status
                   )} rounded-lg transition-all duration-300 ease-in-out`}
+                  style={{ touchAction: "none" }}
                 >
                   <Column
                     title={status}

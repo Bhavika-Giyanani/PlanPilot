@@ -130,7 +130,7 @@ const Splash = ({ onAnimationComplete }) => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500 rounded-full blur-xl"
+              className="absolute top-1/4 left-1/4 w-32 xl:w-96 h-32 xl:h-96 bg-blue-500 rounded-full blur-xl"
             />
             <motion.div
               animate={{
@@ -143,29 +143,29 @@ const Splash = ({ onAnimationComplete }) => {
                 ease: "easeInOut",
                 delay: 1,
               }}
-              className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-purple-500 rounded-full blur-xl"
+              className="absolute bottom-1/4 right-1/4 w-32 xl:w-96 h-32 xl:h-96 bg-purple-500 rounded-full blur-xl"
             />
           </div>
 
-          <div className="flex justify-center items-center gap-8 relative z-10">
+          <div className="flex justify-center items-center gap-3 md:gap-8 relative z-10">
             <motion.div
               variants={logoVariants}
               animate="pulse"
               className="relative"
             >
               <motion.div variants={pulseVariants}>
-                <Logo className="w-44 h-44 drop-shadow-lg" />
+                <Logo className=" w-20 h-20 md:w-36 lg:w-44 md:h-36 lg:h-44 drop-shadow-lg" />
               </motion.div>
             </motion.div>
 
             <motion.div
               variants={textContainerVariants}
-              className="text-8xl font-bold text-white transition-colors duration-300"
+              className="text-4xl md:text-7xl lg:text-8xl font-bold text-white transition-colors duration-300"
             >
               <motion.div className="flex items-center">
                 <motion.span
                   variants={letterVariants}
-                  className="unbounded-900 text-9xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm"
+                  className="unbounded-900 text-5xl md:text-8xl lg:text-9xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm"
                 >
                   P
                 </motion.span>
@@ -179,7 +179,7 @@ const Splash = ({ onAnimationComplete }) => {
 
                 <motion.span
                   variants={letterVariants}
-                  className="unbounded-900 text-9xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent drop-shadow-sm ml-2"
+                  className="unbounded-900 text-5xl md:text-8xl lg:text-9xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent drop-shadow-sm ml-2"
                 >
                   P
                 </motion.span>

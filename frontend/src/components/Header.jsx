@@ -30,7 +30,7 @@ const Header = ({
 
   return (
     <header className="bg-white dark:bg-black shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 backdrop-blur-md bg-opacity-80 dark:bg-opacity-80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 md:px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Title */}
           <div className="flex items-center">
@@ -39,10 +39,11 @@ const Header = ({
 
               <div
                 to="/"
-                className="text-3xl font-bold text-gray-900 dark:text-white transition-colors unbounded-700"
+                className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white transition-colors unbounded-700"
               >
-                <span className="unbounded-900 text-4xl">P</span>lan
-                <span className="unbounded-900 text-4xl">P</span>ilot
+                <span className="unbounded-900 text-3xl md:text-4xl">P</span>lan
+                <span className="unbounded-900 text-3xl md:text-4xl">P</span>
+                ilot
               </div>
             </div>
           </div>
@@ -86,7 +87,7 @@ const Header = ({
           )}
 
           {/* Controls */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
             {/* Auth Navigation for bigger screens */}
             {authHeader && (
               <div className="hidden md:flex items-center space-x-3">

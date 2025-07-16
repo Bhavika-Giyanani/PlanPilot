@@ -77,7 +77,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, initialStatus = "To Do" }) => {
               type="date"
               value={task.due_date}
               onChange={(e) => setTask({ ...task, due_date: e.target.value })}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-[#2D2D2D] text-gray-900 dark:text-white [color-scheme:light] dark:[color-scheme:dark]"
+              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-[#2D2D2D] text-gray-900 dark:text-white dark:placeholder-gray-500 [color-scheme:light] dark:[color-scheme:dark]"
             />
           </div>
 

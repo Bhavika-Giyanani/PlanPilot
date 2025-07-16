@@ -31,6 +31,7 @@ const TaskCard = ({ task, onEdit, onDelete, isDragging, bg }) => {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+    touchAction: "none",
   };
 
   const handleSave = () => {
@@ -100,7 +101,7 @@ const TaskCard = ({ task, onEdit, onDelete, isDragging, bg }) => {
             onChange={(e) =>
               setEditedTask({ ...editedTask, due_date: e.target.value })
             }
-            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 dark:dark:bg-[#191919] text-gray-900 dark:text-white [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-[#191919] text-gray-900 dark:text-white dark:placeholder-gray-500 :text [color-scheme:light] dark:[color-scheme:dark]"
           />
           <select
             value={editedTask.priority || "medium"}
