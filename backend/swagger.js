@@ -5,7 +5,7 @@ const doc = {
     title: "PlanPilot",
     description: "API Documentation for user and tasks APIs of PlanPilot",
   },
-  host: "http://localhost:5000",
+  host: "https://planpilot-to1k.onrender.com",
 };
 
 const outputFile = "./swagger-output.json";

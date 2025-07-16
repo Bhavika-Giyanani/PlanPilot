@@ -5,9 +5,9 @@
     "description": "API Documentation for user and tasks APIs of PlanPilot",
     "version": "1.0.0"
   },
-  "host": "http://localhost:5000",
+  "host": "https://planpilot-to1k.onrender.com",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "paths": {
     "/api/login": {
       "post": {
