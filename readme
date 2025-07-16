@@ -1,0 +1,84 @@
+Challenge Description
+Create a Todo List Application that allows users to manage their tasks. The application should have the following features:
+
+User Authentication: Users should be able to sign up, log in, and log out.
+
+CRUD Operations: Users can create, read, update, and delete tasks.
+
+Task Features: Tasks should have a title, description, due date, and status (e.g., pending, completed).
+
+Responsive Design: The application should be responsive and work well on both desktop and mobile devices.
+
+Requirements
+Backend (Node.js & Express):
+
+Set up a RESTful API with the following endpoints:
+POST /api/signup: Register a new user.
+POST /api/login: Authenticate a user.
+POST /api/logout: Log out a user.
+GET /api/tasks: Retrieve all tasks for the authenticated user.
+POST /api/tasks: Create a new task.
+PUT /api/tasks/:id: Update a task by ID.
+DELETE /api/tasks/:id: Delete a task by ID.
+
+Use JWT for authentication and authorization.
+
+Store user data and tasks in a database (MongoDB preferred).
+
+Validate incoming data to ensure data integrity.
+
+Frontend (React.js):
+
+Create a responsive user interface using React.
+Use React Router for navigation between pages (e.g., login, sign-up, task list).
+
+Implement state management (using Context API or Redux).
+
+Communicate with the backend API using Axios or Fetch.
+
+Provide a form for creating and updating tasks.
+
+Display tasks in a list format with options to edit and delete.
+
+Evaluation Criteria
+
+Code Quality: Clean, readable, and maintainable code with proper comments.
+
+Functionality: All required features should work correctly.
+
+User Experience: Intuitive and responsive UI/UX.
+
+Security: Proper authentication and authorization implementation.
+
+Performance: Efficient data handling and API communication.
+
+Submission Guidelines
+
+Deadline: You have to complete and submit the challenge by 16th July, 2025 05:00 PM.
+
+Submission: Create a GitHub repository for your project. Push your code to the repository and share the link with us.
+
+Evaluation Criteria
+UI/UX
+Clean & Responsive UI
+Smooth Interactions (Animations, Transitions)
+Accessibility Considerations
+Consistent Theme (Light/Dark Mode)
+Business Logic
+Code quality and readability
+Adherence to best practices and design patterns
+Completeness and correctness of the functionality
+State management and component design
+Documentation and ease of setup
+Proper API or Local Storage Handling
+Well-structured Component Design
+Clean and Maintainable Code (Proper Folder Structure, Reusable Components)
+
+How to Submit
+Fork the starter repository to your GitHub account.
+Complete the challenge according to the requirements.
+Upload a short demo video (2-5 minutes) showcasing your app’s features and explaining your approach.
+Once finished, send us
+The GitHub repository link
+The demo video link (Google Drive, YouTube, Loom, etc.)
+Email to careers@itechnosol.com

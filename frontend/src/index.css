@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Londrina+Sketch&family=Unbounded:wght@200..900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c0c0c0, #888);
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #999, #666);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #999 #f1f1f1;
+}
+
+.unbounded-700 {
+  font-family: "Unbounded", "";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.unbounded-900 {
+  font-family: "Unbounded", "";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  /* font-size: xx-large; */
+}
+.bona-nova-sc-regular {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bona-nova-sc-bold {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bona-nova-sc-regular-italic {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.londrina-sketch-regular {
+  font-family: "Londrina Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
