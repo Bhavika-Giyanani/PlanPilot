@@ -1,6 +1,6 @@
-import User from "../model/userModel.js";
-import jwt from "jsonwebtoken";
-import { config } from "dotenv";
+const User = require("../model/userModel.js");
+const jwt = require("jsonwebtoken");
+const { config } = require("dotenv");
 config();
 
 const generateToken = (userId) => {
@@ -8,8 +8,9 @@ const generateToken = (userId) => {
     expiresIn: process.env.JWT_EXPIRE,
   });
 };
+
 //^ Create
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
   try {
     const existingUser = await User.findOne({ email: req.body.email });
     if (existingUser)
@@ -24,14 +25,16 @@ export const createUser = async (req, res) => {
 };
 
 //^ Read
-export const getUser = async (req, res) => {
+const getUser = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user)
       return res.status(400).json({ message: "Incorrect email or password." });
+
     const passwordCorrect = await user.comparePassword(req.body.password);
     if (!passwordCorrect)
       return res.status(400).json({ message: "Incorrect email or password." });
+
     const token = await generateToken(user._id);
     res.status(200).json({
       message: "Login Successful",
@@ -45,4 +48,9 @@ export const getUser = async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: "Login failed. " + error.message });
   }
+};
+
+module.exports = {
+  createUser,
+  getUser,
 };

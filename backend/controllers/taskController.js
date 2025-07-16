@@ -1,7 +1,7 @@
-import Task from "../model/taskModel.js";
+const Task = require("../model/taskModel.js");
 
 //^ Create
-export const createTask = async (req, res) => {
+const createTask = async (req, res) => {
   try {
     if (!req.body.title)
       return res.status(400).json({ message: "Task title is required." });
@@ -20,7 +20,7 @@ export const createTask = async (req, res) => {
 };
 
 //^ Read
-export const getTasks = async (req, res) => {
+const getTasks = async (req, res) => {
   try {
     const tasks = await Task.find({ user: req.user.user_id }).sort({
       createdAt: -1,
@@ -32,7 +32,7 @@ export const getTasks = async (req, res) => {
 };
 
 //^ Update
-export const updateTask = async (req, res) => {
+const updateTask = async (req, res) => {
   try {
     if (!req.params.id)
       return res.status(400).json({ message: "Task id is required." });
@@ -46,7 +46,7 @@ export const updateTask = async (req, res) => {
 };
 
 //^ Delete
-export const DeleteTask = async (req, res) => {
+const deleteTask = async (req, res) => {
   try {
     if (!req.params.id)
       return res.status(400).json({ message: "Task id is required." });
@@ -58,4 +58,11 @@ export const DeleteTask = async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: "Failed to delete task. " + e.message });
   }
+};
+
+module.exports = {
+  createTask,
+  getTasks,
+  updateTask,
+  deleteTask,
 };

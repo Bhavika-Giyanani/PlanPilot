@@ -1,9 +1,9 @@
-import jwt from "jsonwebtoken";
-import { config } from "dotenv";
+const jwt = require("jsonwebtoken");
+const { config } = require("dotenv");
 
 config();
 
-export const protect = async (req, res, next) => {
+const protect = async (req, res, next) => {
   try {
     const authHeader = await req.headers.authorization;
     if (!authHeader || !authHeader.startsWith("Bearer "))
@@ -19,3 +19,4 @@ export const protect = async (req, res, next) => {
     res.status(401).json({ message: "Token is Invalid or Expired." });
   }
 };
+module.exports = protect;
