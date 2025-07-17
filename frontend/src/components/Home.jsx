@@ -431,7 +431,7 @@ const Home = ({ isDarkMode, toggleDarkMode }) => {
           {/* Kanban Board */}
           <div className="w-full overflow-x-auto">
             <div
-              className="flex gap-6 xl:justify-center min-w-max xl:min-w-0"
+              className="flex gap-6 lg:justify-center items-center min-w-max xl:min-w-0"
               style={{ touchAction: "none" }}
             >
               {Object.entries(tasksByStatus).map(([status, tasks]) => (
