@@ -2,7 +2,7 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
@@ -26,7 +26,7 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: #999 #f1f1f1;
-} */
+}
 
 .unbounded-700 {
   font-family: "Unbounded", "";

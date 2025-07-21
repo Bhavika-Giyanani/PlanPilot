@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
 const TaskModal = ({ isOpen, onClose, onSubmit, initialStatus = "To Do" }) => {
@@ -8,6 +8,17 @@ const TaskModal = ({ isOpen, onClose, onSubmit, initialStatus = "To Do" }) => {
     due_date: "",
     status: initialStatus,
   });
+
+  useEffect(() => {
+    if (isOpen) {
+      setTask({
+        title: "",
+        description: "",
+        due_date: "",
+        status: initialStatus,
+      });
+    }
+  }, [initialStatus, isOpen]);
 
   const handleSubmit = () => {
     if (task.title.trim()) {
